@@ -2,7 +2,7 @@
 
 **Baseline accepted:** 13 October 2026, following review of the Phase 0 summary.  
 **State:** design decisions accepted, implementation not started.  
-**Scope:** fictitious portfolio demonstration. No commercial source code or customer data.
+**Scope:** Single-organization request workflow using synthetic development data.
 
 | ID | Decision | State | Rationale / reference |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | D-05 | PostgreSQL, parameterized SQL with `pg`, versioned SQL migrations | Accepted | ADR-0003; validates SQL and explicit transactions |
 | D-06 | Six-table minimum schema with an append-only audit trail | Accepted | ADR-0004; schema subject to incremental migration review |
 | D-07 | Public demo hosting and deployment provider | Deferred | Needs working MVP and a security/cost review |
-| D-08 | Public repository name `operations-hub` | Accepted as target | Requires GitHub repository creation before publishing |
+| D-08 | Repository name `operations-hub` | Accepted | Source and architecture are maintained in the same repository |
 
 ## Details deliberately deferred to implementation issues
 
@@ -25,9 +25,9 @@ These do **not** block OH-001; they must be resolved before their owning impleme
 - **OH-014:** for the initial user-deactivation implementation, reject deactivation (409) while an assigned in-review request exists; do not leave unowned workflow records. Reassignment is out of scope until separately specified.
 - **OH-017:** evaluate demo hosting, TLS, database backups, exposure/cost controls and secrets handling; no deployment is authorized by this decision log.
 
-## Portfolio engineering commitments
+## Engineering workflow
 
-We use short-lived feature branches, genuine code review, pragmatic TDD, a maintained `main`, Conventional Commits, and CI checks before merge (ADR-0005). Commit history must reflect actual work, not fabricated activity. AI assistance, where used, does not replace understanding, verification or human responsibility.
+Use short-lived feature branches, focused code reviews, pragmatic TDD, Conventional Commits and automated checks before merge (ADR-0005). Integration requires documented acceptance criteria and a successful verification run.
 
 ## Changes to the baseline
 

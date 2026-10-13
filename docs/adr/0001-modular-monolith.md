@@ -1,11 +1,11 @@
 # ADR-0001 — Modular Monolith with Separate Vue Web App
 
 **Date:** 2026-10-13  
-**Status:** Accepted in Portfolio Plan v1.0 (high-level decision)
+**Status:** Accepted
 
 ## Context
 
-The portfolio needs clear Vue 3/Node.js/REST/PostgreSQL skills and a design defensible in a technical interview. Distributed deployment would add operational complexity without user demand.
+The workflow requires shared transactions, consistent authorization and a straightforward deployment model. Distributed services would add operational complexity without a corresponding product requirement.
 
 ## Decision
 
@@ -13,4 +13,4 @@ Use one modular Node.js/Express backend, a separate Vue 3 web app and PostgreSQL
 
 ## Consequences
 
-Pros: simple local environment, fast tests, explicit transaction boundaries, smaller CI/CD surface. Trade-off: modular discipline is enforced by code review and tests rather than process isolation. We intentionally do not demonstrate RabbitMQ here; the Queue Manager portfolio project covers that skill.
+Pros: simple local environment, fast tests, explicit transaction boundaries, smaller CI/CD surface. Trade-off: modular discipline is enforced by code review and tests rather than process isolation. A message broker is not justified for the initial synchronous workflow.

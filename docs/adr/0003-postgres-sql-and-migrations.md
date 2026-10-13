@@ -5,7 +5,7 @@
 
 ## Context
 
-The target roles value PostgreSQL/MySQL, SQL, reliable APIs and concurrency control. A portfolio should demonstrate actual queries and transaction semantics instead of relying entirely on an ORM abstraction.
+Approval state transitions require explicit transaction boundaries, predictable locking semantics and auditable persistence behavior. The data access layer should make these guarantees visible.
 
 ## Decision
 
@@ -13,7 +13,7 @@ Use PostgreSQL and `pg` (node-postgres) with parameterized queries. Keep schema 
 
 ## Alternatives considered
 
-- **Prisma:** convenient model and client generation; hides some low-level SQL decisions relevant to the portfolio.
+- **Prisma:** offers model and client generation but adds an abstraction over the SQL behavior used by the workflow.
 - **Kysely:** type-safe query builder and strong alternative; may be revisited if raw SQL creates unmanageable type duplication.
 - **Untracked DDL scripts:** rejected because schema drift is hard to review/reproduce.
 
