@@ -1,16 +1,16 @@
 # Operations Hub
 
-**Vue 3 + Node.js + PostgreSQL | Public engineering portfolio project**
+**Request and approval workflow | Vue 3 + Node.js + PostgreSQL**
 
-> **Project status: design baseline accepted (OH-001).** Application code, database migrations, test suites, CI runs and a public demo are **not implemented yet**. This repository is intentionally documentation-first. No product claims below imply running functionality.
+> **Status: foundation implementation in review (OH-002).** The API health endpoint, a minimal Vue interface and initial tests are proposed in this branch. Authentication, workflows, database migrations and a hosted demo are not yet implemented. The foundation has not been released.
 
 ## Why this project?
 
-Operations Hub models an internal request and approval workflow for one fictional organization. Employees submit requests, managers in the same department claim and decide them, and actions are recorded in an auditable history. It is designed to demonstrate **full-stack engineering discipline** rather than a long feature list.
+Operations Hub models an internal request and approval workflow for one fictional organization. Employees submit requests, managers in the same department claim and decide them, and actions are recorded in an auditable history. The scope prioritizes predictable business rules, explicit authorization and reliable state transitions.
 
-The demo will use only fictional users (`example.test`), departments and records. It does not include code, endpoints or customer data from commercial or personal private projects.
+The development environment will use synthetic users (`example.test`), departments and request records.
 
-## Planned stack
+## Technology stack (implemented components and planned capabilities)
 
 | Area | Technology | Engineering focus |
 |---|---|---|
@@ -47,17 +47,17 @@ Managers cannot claim or approve their own submissions; managers are limited to 
 
 ## Implementation roadmap
 
-1. **OH-001 (this delivery):** publish accepted design baseline and reviewable documentation.
-2. **OH-002:** scaffold `apps/web` and `apps/api` with strict TypeScript and a reproducible local development workflow.
-3. **OH-003 / OH-004:** implement CI gates and PostgreSQL migrations in Docker.
+1. **OH-001 (complete):** publish accepted design baseline and reviewable documentation.
+2. **OH-002 (in review):** scaffold `apps/web` and `apps/api` with strict TypeScript, health checks and a local development workflow.
+3. **OH-003 / OH-004:** harden CI, add Docker Compose and PostgreSQL migrations.
 4. **OH-005 to OH-012:** build authentication, permission rules and complete request/decision slices using automated tests.
 5. **OH-013 to OH-017:** add filters, admin capabilities, hardening, OpenAPI and release readiness.
 
-Issues and PRs are intended to demonstrate authentic engineering work; we will not fabricate activity or claim tests ran before they did.
+Each deliverable is scoped to a single change, documented and reviewed before integration.
 
 ## Running the application
 
-Not available yet. Environment setup, reproducible commands and a tested developer guide are deliverables of OH-002 to OH-004. A public deployment is deferred pending an explicit security and cost review.
+Development requirements and commands are described in [Local development](docs/local-development.md). Use Node.js 24, run `npm install`, then `npm run dev` to start the API and Vue application. Run `npm run check` for typechecks, tests and builds. Dependency versions and checks are pending review and must be validated in CI before this milestone is merged. Deployment is deferred pending a security and cost review.
 
 ## Maintainer
 
