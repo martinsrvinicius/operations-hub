@@ -2,7 +2,7 @@
 
 **Request and approval workflow | Vue 3 + Node.js + PostgreSQL**
 
-> **Status: foundation implementation in review (OH-002).** The API health endpoint, a minimal Vue interface and initial tests are proposed in this branch. Authentication, workflows, database migrations and a hosted demo are not yet implemented. The foundation has not been released.
+> **Status: application foundation available (OH-002).** The API health endpoint, a Vue development shell, automated contract tests and a CI verification workflow are implemented. Authentication, request workflows, database migrations and deployment are not yet implemented.
 
 ## Why this project?
 
@@ -48,7 +48,7 @@ Managers cannot claim or approve their own submissions; managers are limited to 
 ## Implementation roadmap
 
 1. **OH-001 (complete):** publish accepted design baseline and reviewable documentation.
-2. **OH-002 (in review):** scaffold `apps/web` and `apps/api` with strict TypeScript, health checks and a local development workflow.
+2. **OH-002 (complete):** scaffold `apps/web` and `apps/api` with strict TypeScript, health checks, automated tests and a local development workflow.
 3. **OH-003 / OH-004:** harden CI, add Docker Compose and PostgreSQL migrations.
 4. **OH-005 to OH-012:** build authentication, permission rules and complete request/decision slices using automated tests.
 5. **OH-013 to OH-017:** add filters, admin capabilities, hardening, OpenAPI and release readiness.
@@ -57,7 +57,7 @@ Each deliverable is scoped to a single change, documented and reviewed before in
 
 ## Running the application
 
-Development requirements and commands are described in [Local development](docs/local-development.md). Use Node.js 24, run `npm install`, then `npm run dev` to start the API and Vue application. Run `npm run check` for typechecks, tests and builds. Dependency versions and checks are pending review and must be validated in CI before this milestone is merged. Deployment is deferred pending a security and cost review.
+Development requirements and commands are described in [Local development](docs/local-development.md). Use Node.js 24, run `npm ci`, then `npm run dev` to start the API and Vue application. Run `npm run check` for typechecks, tests and builds. These checks also run in [GitHub Actions](.github/workflows/verify.yml) on pull requests and changes to `main`. Deployment is deferred pending a security and cost review.
 
 ## Maintainer
 
