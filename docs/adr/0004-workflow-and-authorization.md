@@ -5,7 +5,7 @@
 
 ## Context
 
-A portfolio app needs rules that justify TDD, access-control tests and database transactions. A generic CRUD-only demo does not provide compelling evidence.
+A request workflow must prevent conflicting decisions, unauthorized access and missing audit records. Generic status updates without explicit invariants are insufficient.
 
 ## Decision
 

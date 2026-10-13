@@ -1,6 +1,6 @@
 # Product Brief — Operations Hub
 
-**Status:** Accepted product baseline | **Product type:** Fictional portfolio application | **Audience:** Software engineering recruiters and technical interviewers.
+**Status:** Accepted product baseline | **Product type:** Internal request management and approval workflow | **Data:** Synthetic development records.
 
 ## Problem
 
@@ -8,7 +8,7 @@ Internal teams lose track of service requests, ownership, approvals and the reas
 
 ## Product outcome
 
-A small but realistic application with transparent approval workflows, secure department scoping, reliable persistence, explicit error handling and traceable transitions. Engineering quality and explainable design take priority over feature count.
+A small but realistic application with transparent approval workflows, secure department scoping, reliable persistence, explicit error handling and traceable transitions. Reliable business rules and a maintainable implementation take priority over feature count.
 
 ## Users
 
@@ -38,8 +38,8 @@ Payments; public signup; invitations; password reset and email delivery; messagi
 - A requester can submit, a departmental manager can claim and decide, and authorization rules cannot be bypassed through direct API requests.
 - Invalid transitions, wrong-department access and simultaneous claims are covered by automated tests.
 - API contracts, data constraints and deployment assumptions are documented.
-- Branch checks are green, the demo is reproducible, and the developer can defend key technical trade-offs in an English interview.
+- Branch checks are green, the demo is reproducible, and the major technical trade-offs are documented in ADRs.
 
 ## Delivery constraint
 
-The design baseline is approved. Publication to GitHub requires repository creation; actual deployment requires a separate security and cost review. No implementation or deployment exists in OH-001.
+The design baseline is approved. The initial delivery publishes documentation only; application deployment requires a separate security and cost review. No implementation or deployment exists in OH-001.

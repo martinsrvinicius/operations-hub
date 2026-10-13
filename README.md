@@ -1,14 +1,14 @@
 # Operations Hub
 
-**Vue 3 + Node.js + PostgreSQL | Public engineering portfolio project**
+**Request and approval workflow | Vue 3 + Node.js + PostgreSQL**
 
 > **Project status: design baseline accepted (OH-001).** Application code, database migrations, test suites, CI runs and a public demo are **not implemented yet**. This repository is intentionally documentation-first. No product claims below imply running functionality.
 
 ## Why this project?
 
-Operations Hub models an internal request and approval workflow for one fictional organization. Employees submit requests, managers in the same department claim and decide them, and actions are recorded in an auditable history. It is designed to demonstrate **full-stack engineering discipline** rather than a long feature list.
+Operations Hub models an internal request and approval workflow for one fictional organization. Employees submit requests, managers in the same department claim and decide them, and actions are recorded in an auditable history. The scope prioritizes predictable business rules, explicit authorization and reliable state transitions.
 
-The demo will use only fictional users (`example.test`), departments and records. It does not include code, endpoints or customer data from commercial or personal private projects.
+The development environment will use synthetic users (`example.test`), departments and request records.
 
 ## Planned stack
 
@@ -53,11 +53,11 @@ Managers cannot claim or approve their own submissions; managers are limited to 
 4. **OH-005 to OH-012:** build authentication, permission rules and complete request/decision slices using automated tests.
 5. **OH-013 to OH-017:** add filters, admin capabilities, hardening, OpenAPI and release readiness.
 
-Issues and PRs are intended to demonstrate authentic engineering work; we will not fabricate activity or claim tests ran before they did.
+Each deliverable is scoped to a single change, documented and reviewed before integration.
 
 ## Running the application
 
-Not available yet. Environment setup, reproducible commands and a tested developer guide are deliverables of OH-002 to OH-004. A public deployment is deferred pending an explicit security and cost review.
+Not available yet. Environment setup, reproducible commands and a tested developer guide are deliverables of OH-002 to OH-004. A deployment is deferred pending a security and cost review.
 
 ## Maintainer
 
