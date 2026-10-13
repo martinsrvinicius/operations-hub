@@ -7,7 +7,7 @@ test('GET /api/health returns a healthy JSON response', async () => {
   const response = await request(createApp()).get('/api/health');
   assert.equal(response.status, 200);
   assert.deepEqual(response.body, { status: 'ok' });
-  assert.match(response.headers['content-type'], /application\/json/);
+  assert.match(response.headers['content-type'] ?? '', /application\/json/);
 });
 
 test('unknown routes return a structured 404', async () => {

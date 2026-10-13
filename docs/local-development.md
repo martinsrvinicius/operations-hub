@@ -8,10 +8,10 @@
 ## Install
 
 ```bash
-npm install
+npm ci
 ```
 
-The root repository uses npm workspaces to manage the API and web packages together. A dependency lockfile must be committed before this foundation PR is merged; until then dependency resolution is provisional.
+The root repository uses npm workspaces to manage the API and web packages together. Dependency versions are fixed in the committed `package-lock.json`.
 
 ## Start the application
 
